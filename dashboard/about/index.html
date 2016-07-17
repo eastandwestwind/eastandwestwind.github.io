@@ -46,7 +46,7 @@
 (function(w,d,s,g,js,fs){
   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
   js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
+  js.src='https://apis.google.com/js/client.js';
   fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
 }(window,document,'script'));
 </script>
@@ -60,11 +60,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="pull-left"><img src="img/logo.png" style="max-width:50px"></div>
+          <div class="pull-left"><img src="../img/FLicon.svg" style="max-width:50px"></div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">PJA Advertising + Marketing</a></li>
+            <li><a href="index.html">Dashboard</a></li>
             <li class="active"><a href="about">About</a></li>
             <li><a href="contact">Contact</a></li>
             <li><a href="login" id="embed-api-auth-container" align="right" font color="white"></a></li>
@@ -76,6 +76,7 @@
  <div class="container">
 
       <div class="starter-template">
+        <br/>
         <h1>About Your Dashboard</h1>
         <p class="lead">Your customized dashboard displays the most relevant KPI's to your business.<br> Feel free to access the dashboard from your phone or tablet!</p>
       </div>

@@ -42,7 +42,7 @@
      formatting and manipulation. -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- Include the ViewSelector2 component script. -->
 <script src="/public/javascript/embed-api/components/view-selector2.js"></script>
 
@@ -53,31 +53,31 @@
 <script src="/public/javascript/embed-api/components/active-users.js"></script>
 
 <style>
-    
+
   body {
     font-family: 'Open Sans', sans-serif;
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   .reportContainer {
     float: left;
     margin-bottom: 20px;
     margin-right: 20px;
   }
-  
+
   .chartContainer {
     width: 500px;
     height: 200px;
   }
-  
+
   .chartTitleContainer {
     width: 500px;
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
   }
-  
+
   .up {
     color: green;
   }
@@ -107,11 +107,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="pull-left"><img src="img/logo.png" style="max-width:50px"></div>
+          <div class="pull-left"><img src="img/FLicon.svg" style="max-width:50px"></div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">PJA Advertising + Marketing</a></li>
+            <li class="active"><a href="index.html">Dashboard</a></li>
             <li><a href="about">About</a></li>
             <li><a href="contact">Contact</a></li>
             <li id="auth-button" align="right" font color="white"></li>
@@ -131,7 +131,7 @@
       </div><!-- /.starter.template -->
 
     </div><!-- /.container -->
-<!-- 
+<!--
      'ids': "ga:1801094" -->
 
 <script>
@@ -157,16 +157,16 @@
     console.log("get profiles");
     getProfiles(function(profs) {
       window.profiles = profs;
-      processProfiles();      
+      processProfiles();
     });
-  
+
   });
 
   Chart.defaults.global.animationSteps = 60;
   Chart.defaults.global.animationEasing = 'easeInOutQuart';
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.maintainAspectRatio = false;
-  
+
 });
 
 // /**
@@ -316,16 +316,16 @@ var curProfile = 0;
     return;
   }
 
-  gapi.client.analytics.management.accounts.list().then(function(res) { 
+  gapi.client.analytics.management.accounts.list().then(function(res) {
     var accountId = res.result.items[0].id;
     var profiles = [];
     gapi.client.analytics.management.webproperties.list({'accountId': '1028024'}).then(function(res) {
-  
+
       res.result.items.forEach(function(item) {
         if(item.defaultProfileId) profiles.push({id:"ga:"+item.defaultProfileId,name:item.name});
       });
-      sessionStorage["gaProfiles"] = JSON.stringify(profiles);    
-      cb(profiles);      
+      sessionStorage["gaProfiles"] = JSON.stringify(profiles);
+      cb(profiles);
     });
   });
 }
@@ -354,7 +354,7 @@ function makeCanvas(id) {
 
   return ctx;
 }
-      
+
 function processProfiles() {
   for (i in profiles) {
     if (profiles[i].id=="ga:1801094"){
@@ -363,7 +363,7 @@ function processProfiles() {
   }
 
   console.log("working on profile "+profiles[curProfile].name);
-  
+
   var now = moment();
   console.log('this week',moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),moment(now).format('YYYY-MM-DD') );
   console.log('this week',moment(now).subtract(8, 'day').format('YYYY-MM-DD'),moment(now).subtract(1,'day').format('YYYY-MM-DD') );
@@ -371,7 +371,7 @@ function processProfiles() {
   //console.log('last week',moment(now).subtract(1, 'day').day(0).subtract(1, 'week').format('YYYY-MM-DD'),moment(now).subtract(1, 'day').day(6).subtract(1, 'week').format('YYYY-MM-DD') )
   // var id = profiles[curProfile].id;
   var id = "ga:1801094";
-  
+
 // begin queries for week by week
 
   var thisWeek = query({
@@ -391,7 +391,7 @@ function processProfiles() {
     'end-date': moment(now).subtract(8, 'day').subtract(1, 'week')
     .format('YYYY-MM-DD')
   });
-    
+
 
 // end queries
 
@@ -399,7 +399,7 @@ function processProfiles() {
 
   Promise.all([thisWeek, lastWeek]).then(function(results) {
     console.log("Promise.all");console.dir(results);
-      
+
     var data1 = results[0].rows.map(function(row) { return +row[2]; });
     var data2 = results[1].rows.map(function(row) { return +row[2]; });
     var labels = results[1].rows.map(function(row) { return +row[0]; });
@@ -446,7 +446,7 @@ function processProfiles() {
       if(percChange < 0) {
         titleStr += "<span class='down'>(Down "+Math.abs(percChange) + "%)</span>";
       } else {
-        titleStr += "<span class='up'>(Up "+percChange + "%)</span>";      
+        titleStr += "<span class='up'>(Up "+percChange + "%)</span>";
       }
     }
 
