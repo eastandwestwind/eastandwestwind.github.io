@@ -1,4 +1,25 @@
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bar--positive {
+  fill: steelblue;
+}
+
+.bar--negative {
+  fill: darkorange;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }

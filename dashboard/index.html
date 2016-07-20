@@ -12,91 +12,25 @@
     <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- add custum css -->
     <link href="style.css" rel="stylesheet">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- This demo uses the Chart.js graphing library and Moment.js to do date
-     formatting and manipulation. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<!-- Include the ViewSelector2 component script. -->
-<script src="/public/javascript/embed-api/components/view-selector2.js"></script>
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-<!-- Include the DateRangeSelector component script. -->
-<script src="/public/javascript/embed-api/components/date-range-selector.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<!-- Include the ActiveUsers component script. -->
-<script src="/public/javascript/embed-api/components/active-users.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
 
-<style>
-
-  body {
-    font-family: 'Open Sans', sans-serif;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .reportContainer {
-    float: left;
-    margin-bottom: 20px;
-    margin-right: 20px;
-  }
-
-  .chartContainer {
-    width: 500px;
-    height: 200px;
-  }
-
-  .chartTitleContainer {
-    width: 500px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-
-  .up {
-    color: green;
-  }
-  .down {
-    color: red;
-  }
-  </style>
   </head>
 
   <body>
-
- <script>
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
-}(window,document,'script'));
-</script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -124,353 +58,30 @@
 
       <div class="starter-template">
         <h1 align="center">Analytics Dashboard</h1>
-        <div id="active-users-container"></div>
-        <div id="timeline"></div>
-        <div id="chart-1-container"></div>
-<div id="legend-1-container"></div>
+
+        <div class="btn-group">
+          <i class="dropdown-arrow dropdown-arrow-inverse"></i>
+          <button class="btn btn-primary status">Select Source</button>
+          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-inverse">
+              <li><a class="s1" href="#">Source 1</a>
+              </li>
+              <li><a class="s2" href="#">Source 2</a>
+              </li>
+              <li><a class="s3" href="#">Source 3</a>
+              </li>
+          </ul>
+        </div>
+
       </div><!-- /.starter.template -->
 
     </div><!-- /.container -->
-<!--
-     'ids': "ga:1801094" -->
 
-<script>
 
-// == NOTE ==
-// This code uses ES6 promises. If you want to use this code in a browser
-// that doesn't supporting promises natively, you'll have to include a polyfill.
+     <!-- d3 scripts -->
+     <script src="js/script.js"></script>
 
 
- gapi.analytics.ready(function() {
-
-  var CLIENT_ID = '785100694353-q0bjtiu1aiqjjm4oqremg0gpvjkl3p77.apps.googleusercontent.com';
-
-  gapi.analytics.auth.authorize({
-    container: 'auth-button',
-    clientid: CLIENT_ID,
-    userInfoLabel:""
-  });
-
-  gapi.analytics.auth.on('success', function(response) {
-    //hide the auth-button
-    document.querySelector("#auth-button").style.display='none';
-    console.log("get profiles");
-    getProfiles(function(profs) {
-      window.profiles = profs;
-      processProfiles();
-    });
-
-  });
-
-  Chart.defaults.global.animationSteps = 60;
-  Chart.defaults.global.animationEasing = 'easeInOutQuart';
-  Chart.defaults.global.responsive = true;
-  Chart.defaults.global.maintainAspectRatio = false;
-
-});
-
-// /**
-//    * Create a new ActiveUsers instance to be rendered inside of an
-//    * element with the id "active-users-container" and poll for changes every
-//    * five seconds.
-//    */
-//   var activeUsers = new gapi.analytics.ext.ActiveUsers({
-//     container: 'active-users-container',
-//     ids: "ga:1801094"
-//     pollingInterval: 5
-//   });
-
-
-//   /**
-//    * Add CSS animation to visually show the when users come and go.
-//    */
-//   activeUsers.once('success', function() {
-//     var element = this.container.firstChild;
-//     var timeout;
-
-//     this.on('change', function(data) {
-//       var element = this.container.firstChild;
-//       var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
-//       element.className += (' ' + animationClass);
-
-//       clearTimeout(timeout);
-//       timeout = setTimeout(function() {
-//         element.className =
-//             element.className.replace(/ is-(increasing|decreasing)/g, '');
-//       }, 3000);
-//     });
-//   });
-
-// activeUsers.execute();
-
-
-// TEST 1
-
-// function renderWeekOverWeekChart(ids) {
-
-//     // Adjust `now` to experiment with different days, for testing only...
-//     var now = moment(); // .subtract(3, 'day');
-
-//     var thisWeek = query({
-//       'ids': "ga:1801094",
-//       'dimensions': 'ga:date,ga:nthDay',
-//       'metrics': 'ga:sessions',
-//       'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
-//       'end-date': moment(now).format('YYYY-MM-DD')
-//     });
-
-//     var lastWeek = query({
-//       'ids': "ga:1801094",
-//       'dimensions': 'ga:date,ga:nthDay',
-//       'metrics': 'ga:sessions',
-//       'start-date': moment(now).subtract(1, 'day').day(0).subtract(1, 'week')
-//           .format('YYYY-MM-DD'),
-//       'end-date': moment(now).subtract(1, 'day').day(6).subtract(1, 'week')
-//           .format('YYYY-MM-DD')
-//     });
-
-//     Promise.all([thisWeek, lastWeek]).then(function(results) {
-
-//       var data1 = results[0].rows.map(function(row) { return +row[2]; });
-//       var data2 = results[1].rows.map(function(row) { return +row[2]; });
-//       var labels = results[1].rows.map(function(row) { return +row[0]; });
-
-//       labels = labels.map(function(label) {
-//         return moment(label, 'YYYYMMDD').format('ddd');
-//       });
-
-//       var data = {
-//         labels : labels,
-//         datasets : [
-//           {
-//             label: 'Last Week',
-//             fillColor : 'rgba(220,220,220,0.5)',
-//             strokeColor : 'rgba(220,220,220,1)',
-//             pointColor : 'rgba(220,220,220,1)',
-//             pointStrokeColor : '#fff',
-//             data : data2
-//           },
-//           {
-//             label: 'This Week',
-//             fillColor : 'rgba(151,187,205,0.5)',
-//             strokeColor : 'rgba(151,187,205,1)',
-//             pointColor : 'rgba(151,187,205,1)',
-//             pointStrokeColor : '#fff',
-//             data : data1
-//           }
-//         ]
-//       };
-
-//       new Chart(makeCanvas('chart-1-container')).Line(data);
-//       generateLegend('legend-1-container', data.datasets);
-//     });
-//   }
-
-
-// END TEST 1
-
-/**
-   * Create a new canvas inside the specified element. Set it to be the width
-   * and height of its container.
-   * @param {string} id The id attribute of the element to host the canvas.
-   * @return {RenderingContext} The 2D canvas context.
-   */
-  function makeCanvas(id) {
-    var container = document.getElementById(id);
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
-
-    container.innerHTML = '';
-    canvas.width = container.offsetWidth;
-    canvas.height = container.offsetHeight;
-    container.appendChild(canvas);
-
-    return ctx;
-  }
-
-
-  /**
-   * Create a visual legend inside the specified element based off of a
-   * Chart.js dataset.
-   * @param {string} id The id attribute of the element to host the legend.
-   * @param {Array.<Object>} items A list of labels and colors for the legend.
-   */
-  function generateLegend(id, items) {
-    var legend = document.getElementById(id);
-    legend.innerHTML = items.map(function(item) {
-      var color = item.color || item.fillColor;
-      var label = item.label;
-      return '<li><i style="background:' + color + '"></i>' + label + '</li>';
-    }).join('');
-  }
-
-
-var profiles;
-var curProfile = 0;
-
- function getProfiles(cb) {
-  //do we have a cached version?
-  if(sessionStorage["gaProfiles"]) {
-    console.log("profiles fetched from cache");
-    cb(JSON.parse(sessionStorage["gaProfiles"]));
-    return;
-  }
-
-  gapi.client.analytics.management.accounts.list().then(function(res) {
-    var accountId = res.result.items[0].id;
-    var profiles = [];
-    gapi.client.analytics.management.webproperties.list({'accountId': '1028024'}).then(function(res) {
-
-      res.result.items.forEach(function(item) {
-        if(item.defaultProfileId) profiles.push({id:"ga:"+item.defaultProfileId,name:item.name});
-      });
-      sessionStorage["gaProfiles"] = JSON.stringify(profiles);
-      cb(profiles);
-    });
-  });
-}
-
-
-
-//Credit: https://ga-dev-tools.appspot.com/embed-api/third-party-visualizations/
-function query(params) {
-  return new Promise(function(resolve, reject) {
-    var data = new gapi.analytics.report.Data({query: params});
-    data.once('success', function(response) { resolve(response); })
-        .once('error', function(response) { reject(response); })
-        .execute();
-  });
-}
-
-function makeCanvas(id) {
-  var container = document.getElementById(id);
-  var canvas = document.createElement('canvas');
-  var ctx = canvas.getContext('2d');
-
-  container.innerHTML = '';
-  canvas.width = container.offsetWidth;
-  canvas.height = container.offsetHeight;
-  container.appendChild(canvas);
-
-  return ctx;
-}
-
-function processProfiles() {
-  for (i in profiles) {
-    if (profiles[i].id=="ga:1801094"){
-      curProfile=i
-    }
-  }
-
-  console.log("working on profile "+profiles[curProfile].name);
-
-  var now = moment();
-  console.log('this week',moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),moment(now).format('YYYY-MM-DD') );
-  console.log('this week',moment(now).subtract(8, 'day').format('YYYY-MM-DD'),moment(now).subtract(1,'day').format('YYYY-MM-DD') );
-  console.log('last week',moment(now).subtract(15, 'day').format('YYYY-MM-DD'),moment(now).subtract(8,'day').format('YYYY-MM-DD') );
-  //console.log('last week',moment(now).subtract(1, 'day').day(0).subtract(1, 'week').format('YYYY-MM-DD'),moment(now).subtract(1, 'day').day(6).subtract(1, 'week').format('YYYY-MM-DD') )
-  // var id = profiles[curProfile].id;
-  var id = "ga:1801094";
-
-// begin queries for week by week
-
-  var thisWeek = query({
-    'ids': id,
-    'dimensions': 'ga:date,ga:nthDay',
-    'metrics': 'ga:sessions',
-    'start-date': moment(now).subtract(8, 'day').format('YYYY-MM-DD'),
-    'end-date': moment(now).subtract(1,'day').format('YYYY-MM-DD')
-  });
-
-  var lastWeek = query({
-    'ids': id,
-    'dimensions': 'ga:date,ga:nthDay',
-    'metrics': 'ga:sessions',
-    'start-date': moment(now).subtract(15, 'day').subtract(1, 'week')
-    .format('YYYY-MM-DD'),
-    'end-date': moment(now).subtract(8, 'day').subtract(1, 'week')
-    .format('YYYY-MM-DD')
-  });
-
-
-// end queries
-
-// calculate percChange for week by week
-
-  Promise.all([thisWeek, lastWeek]).then(function(results) {
-    console.log("Promise.all");console.dir(results);
-
-    var data1 = results[0].rows.map(function(row) { return +row[2]; });
-    var data2 = results[1].rows.map(function(row) { return +row[2]; });
-    var labels = results[1].rows.map(function(row) { return +row[0]; });
-
-    var totalThisWeek = results[0].totalsForAllResults["ga:sessions"];
-    var totalLastWeek = results[1].totalsForAllResults["ga:sessions"];
-    var percChange = (((totalThisWeek - totalLastWeek) / totalLastWeek) * 100).toFixed(2);
-    console.log(totalLastWeek, totalThisWeek, percChange);
-
-
-// add labels for week by week
-
-    labels = labels.map(function(label) {
-      return moment(label, 'YYYYMMDD').format('ddd');
-    });
-
-    var data = {
-      labels : labels,
-      datasets : [
-        {
-          label: 'Last Week',
-          fillColor : 'rgba(220,220,220,0.5)',
-          strokeColor : 'rgba(220,220,220,1)',
-          pointColor : 'rgba(220,220,220,1)',
-          pointStrokeColor : '#fff',
-          data : data2
-        },
-        {
-          label: 'This Week',
-          fillColor : 'rgba(151,187,205,0.5)',
-          strokeColor : 'rgba(151,187,205,1)',
-          pointColor : 'rgba(151,187,205,1)',
-          pointStrokeColor : '#fff',
-          data : data1
-        }
-      ]
-    };
-
-
-// title for week by week
-
-    var titleStr = "Sessions" + " ";
-    if(totalLastWeek > 0 && totalThisWeek > 0) {
-      if(percChange < 0) {
-        titleStr += "<span class='down'>(Down "+Math.abs(percChange) + "%)</span>";
-      } else {
-        titleStr += "<span class='up'>(Up "+percChange + "%)</span>";
-      }
-    }
-
-
-// append to body
-
-    $("body").append("<div class='reportContainer'><div class='chartTitleContainer'>"+titleStr+"</div><div class='chartContainer' id='chart-"+curProfile+"-container'></div></div>");
-
-    new Chart(makeCanvas('chart-'+curProfile+'-container')).Line(data);
-
-  });
-}
-
-
-
-</script>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
