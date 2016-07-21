@@ -1,10 +1,12 @@
 
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
-}(window,document,'script'));
+// (function(w,d,s,g,js,fjs){
+//   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
+//   js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
+//   js.src='https://apis.google.com/js/platform.js';
+//   fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
+// }(window,document,'script'));
+
+
 //  gapi.analytics.ready(function() {
 //
 //   var CLIENT_ID = '785100694353-q0bjtiu1aiqjjm4oqremg0gpvjkl3p77.apps.googleusercontent.com';
@@ -27,50 +29,51 @@
 //   });
 //
 // });
-
 var margin = {top: 20, right: 30, bottom: 40, left: 30},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var x = d3.scale.linear()
-    .range([0, width]);
-
-var y = d3.scale.ordinal()
-    .rangeRoundBands([0, height], 0.1);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
-
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .tickSize(0)
-    .tickPadding(6);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
 $('.dropdown-inverse li > a').click(function(e){
     $('.status').text(this.innerHTML);
     var status = $(this).attr("class");
+
+    d3.selectAll("svg").remove();
+
+    var x = d3.scale.linear()
+        .range([0, width]);
+
+    var y = d3.scale.ordinal()
+        .rangeRoundBands([0, height], 0.1);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .tickSize(0)
+        .tickPadding(6);
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
     switch (status) {
-  case "s1":
-    var input = "data.csv"
-    break;
-  case "s2":
-    var input = "data2.csv"
-    break;
-  case "s3":
-    //Statements executed when the result of expression matches valueN
-    break;
-  default:
-    //Statements executed when none of the values match the value of the expression
-    break;
-}
+    case "s1":
+      var input = "data.csv"
+      break;
+    case "s2":
+      var input = "data2.csv"
+      break;
+    case "s3":
+      var input = "data3.csv"
+      break;
+    default:
+      break;
+  }
 
 
   d3.csv(input, type, function(error, data) {
@@ -80,14 +83,23 @@ $('.dropdown-inverse li > a').click(function(e){
   svg.selectAll(".bar")
       .data(data)
       .enter().append("rect")
-      .attr("x", function(d) { return x(Math.min(0, d.value)); })
+      .attr('x', function(d) { return x(0); })
+
       .attr("y", function(d) { return y(d.name); })
       .attr("height", y.rangeBand())
+      .attr("width",0)
       .transition()
         .delay(function(d, i) { return i * 200}).duration(200)
-        .style('width', function(d) { return (d * 150) + 'px'; })
+        .attr("x", function(d) { return x(Math.min(0, d.value)); })
         .attr("class", function(d) { return "bar bar--" + (d.value < 0 ? "negative" : "positive"); })
         .attr("width", function(d) { return Math.abs(x(d.value) - x(0)); });
+        // .attr('x', function(d) { return x(d3.max([d.value, 0])); });
+
+  // d3.select("svg").selectAll("rect")
+  //             .data(data)
+  //             .transition()
+  //             .duration(1000)
+  //             .attr("width", function(d) {return x(d); });
 
   svg.append("g")
       .attr("class", "x axis")
