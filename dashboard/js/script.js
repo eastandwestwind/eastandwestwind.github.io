@@ -49,7 +49,7 @@ var showChart = function(){
 
   switch (selectedRect) {
   case "index0":
-    var input = "imp"
+    var input = "cimp"
     break;
   case "index1":
     var input = "vimp"
@@ -124,7 +124,7 @@ var showChart = function(){
 
   function type(d) {
     d.date = formatDate.parse(d.date);
-    d.input = +d.input;
+    d[input] = +d[input];
     return d;
   }
 
