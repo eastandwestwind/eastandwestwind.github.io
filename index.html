@@ -1,10 +1,12 @@
 <HTML>
 <HEAD>
 <TITLE>catherine</TITLE>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
 <style type="text/css">
 body, html {
   margin-top: 50;
   padding:0;
+  font-family: "Inconsolata";
 }
 td{
   padding-right: 20px;
@@ -25,7 +27,18 @@ h1{
   font-size: 40px;
 }
 h2{
-  font-size: 20px;
+  font-family: "Inconsolata";
+  font-size: 36px;
+  color: #505050;
+  /*margin: 10px;*/
+}
+.title {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  transform: translateY(50%);
+  z-index: 100;
+  margin: 0;
 }
 img {
   filter: gray; /* IE6-9 */
@@ -39,6 +52,9 @@ img {
   -webkit-filter: grayscale(0);
   opacity: 1;
 }
+.overlay:hover .title{
+  display: none;
+}
 .overlay {
   position: relative;
   display: inline-block;
@@ -48,17 +64,17 @@ img {
     width:100%; height:100%;
     top:0; left:0;
     position: absolute;
-    background:rgba(0,0,0,0.1);
+    background:rgba(200,200,200,0.7);
 }
 .overlay:hover::after {
-    background:rgba(0,0,0,0.05);
+    background:rgba(0,0,0,0.03);
+}
+.desc {
+  padding: 10px;
 }
 
 </style>
 
-<script>
-
-</script>
 
 
 <!-- Google Tag Manager -->
@@ -81,11 +97,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <a id="link" class="contact" href="http://www.google.com/recaptcha/mailhide/d?k=014VTpFHQo_w-bJjM2PEvGXQ==&amp;c=orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075014VTpFHQo_w-bJjM2PEvGXQ\75\75\46c\75orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="contact Catherine">Contact</a>
     </div>
   <div class="project">
+
+    <div class="overlay">
+    <img src="img/utmimg.png" height="150px" class="screenshot">
+    <div class="title">
     <h2>
       UTM Builder
     </h2>
-    <div class="overlay">
-    <img src="img/utmimg.png" height="150px" class="screenshot">
+
+  </div>
+  </div>
+  <div class="desc">
+          Tool to create and export UTM codes in bulk
   </div>
   <table>
     <tr>
@@ -97,16 +120,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </td>
     </tr>
   </table>
-  <div>
-          Tool to create and export UTM codes in bulk
-  </div>
+
   </div>
   <div class="project">
+    <div class="overlay">
+    <img src="img/boxesimg.png" height="150px" class="screenshot">
+    <div class="title">
     <h2>
       Boxes
     </h2>
-    <div class="overlay">
-    <img src="img/boxesimg.png" height="150px" class="screenshot">
+  </div>
+  </div>
+  <div class="desc">
+         Playing with spritesheet animations and physics
   </div>
   <table>
     <tr>
@@ -118,9 +144,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </td>
     </tr>
   </table>
-  <div>
-         Playing with spritesheet animations and physics
-  </div>
+
 </div>
 </br>
 
