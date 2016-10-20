@@ -1,87 +1,12 @@
 <HTML>
 <HEAD>
 <TITLE>Catherine Smith - Data Analytics and Marketing Strategy</TITLE>
+<meta name=viewport content="width=device-width, initial-scale=1">
 <meta name="description" content="Catherine Smith is focused on data analytics and web development. This site features notes and projects, including a UTM code builder and a boxes game.">
 <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-<style type="text/css">
-body, html {
-  margin-top: 35;
-  padding:0;
-  font-family: "Inconsolata";
-}
-td{
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-#link{
-  padding-left: 20px;
-  padding-right: 20px;
-}
-a{
-  color: blue;
-}
-.nav{
-  padding-bottom: 30px;
-}
-.project{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-h1{
-  font-size: 36px;
-  font-weight: normal;
-}
-h2{
-  font-family: "Inconsolata";
-  font-size: 26px;
-  /*color: #505050;*/
-  /*margin: 10px;*/
-}
-.title {
-  position: absolute;
-  bottom: 50%;
-  width: 100%;
-  transform: translateY(50%);
-  z-index: 100;
-  margin: 0;
-}
-img {
-  filter: gray; /* IE6-9 */
-  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
-  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-  opacity: .5;
-}
-/* Disable grayscale on hover */
-.overlay:hover img{
-  filter: none;
-  -webkit-filter: grayscale(0);
-  opacity: 1;
-}
-.overlay:hover .title{
-  display: none;
-}
-.overlay {
-  position: relative;
-  display: inline-block;
-}
-.overlay::after {
-    content:' ';
-    width:100%; height:100%;
-    top:0; left:0;
-    position: absolute;
-    background:rgba(184,184,184,0.5);
-}
-.overlay:hover::after {
-    background:rgba(0,0,0,0.03);
-}
-.desc {
-  padding: 10px;
-}
-
-</style>
-
-
-
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+  
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WBKD5N"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -95,64 +20,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </HEAD>
 <BODY>
   <CENTER>
-    <h1>catherine smith</h1>
+    <div class="face">
+      <img src="/img/face.png" height="100px">
+    </div>
+    <h1>
+      catherine smith
+    </h1>
     <div class="nav">
         <a id="link" class="notes" href="http://catherine.work/notes">notes</a>
         <a id="link" class="resume" href="http://catherine.work/resume">resume</a>
         <a id="link" class="contact" href="http://www.google.com/recaptcha/mailhide/d?k=014VTpFHQo_w-bJjM2PEvGXQ==&amp;c=orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075014VTpFHQo_w-bJjM2PEvGXQ\75\75\46c\75orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="contact Catherine">contact</a>
     </div>
+
   <div class="project">
-
     <div class="overlay">
-    <img src="img/utmimg.png" height="150px" class="screenshot">
-    <div class="title">
-    <h2>
-      utm builder
-    </h2>
+      <img src="img/utmimg.png" height="150px" class="screenshot">
+      <div class="title">
+        <h2>
+          utm builder
+        </h2>
 
-  </div>
-  </div>
+      </div>
+    </div>
   <!-- <div class="desc">
           Tool to create and export UTM codes in bulk
   </div> -->
-  <table>
-    <tr>
-      <td>
-        <a class="utmdemo" href="http://catherine.work/utmbuilder">demo</a>
-      </td>
-      <td>
-        <a class="utmgit" href="https://github.com/eastandwestwind/utmbuilder">github</a>
-      </td>
-    </tr>
-  </table>
-
+    <table>
+      <tr>
+        <td>
+          <a class="utmdemo" href="http://catherine.work/utmbuilder">demo</a>
+        </td>
+        <td>
+          <a class="utmgit" href="https://github.com/eastandwestwind/utmbuilder">github</a>
+        </td>
+      </tr>
+    </table>
   </div>
+
   <div class="project">
     <div class="overlay">
-    <img src="img/boxesimg.png" height="150px" class="screenshot">
-    <div class="title">
-    <h2>
-      boxes
-    </h2>
+      <img src="img/gtmjsonimg.png" height="150px" class="screenshot">
+      <div class="title">
+        <h2>
+          gtm json to csv parser
+        </h2>
+
+      </div>
+    </div>
+    <table>
+      <tr>
+        <td>
+          <a class="gtmdemo" href="http://catherine.work/gtm-json-converter/">demo</a>
+        </td>
+        <td>
+          <a class="gtmgit" href="https://github.com/eastandwestwind/gtm-json-converter">github</a>
+        </td>
+      </tr>
+    </table>
   </div>
-  </div>
+
+  <div class="project">
+    <div class="overlay">
+      <img src="img/boxesimg.png" height="150px" class="screenshot">
+      <div class="title">
+        <h2>
+          boxes
+        </h2>
+      </div>
+    </div>
   <!-- <div class="desc">
          Playing with spritesheet animations and physics
   </div> -->
-  <table>
-    <tr>
-      <td>
-        <a class="boxesdemo" href="http://catherine.work/boxes">demo</a>
-      </td>
-      <td>
-        <a class="boxesgit" href="https://github.com/eastandwestwind/boxes">github</a>
-      </td>
-    </tr>
-  </table>
-
-</div>
+    <table>
+      <tr>
+        <td>
+          <a class="boxesdemo" href="http://catherine.work/boxes">demo</a>
+        </td>
+        <td>
+          <a class="boxesgit" href="https://github.com/eastandwestwind/boxes">github</a>
+        </td>
+      </tr>
+    </table>
+  </div>
 </br>
-
 
 </BODY>
 </HTML>

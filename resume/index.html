@@ -1,20 +1,41 @@
 <HTML>
 <HEAD>
 <TITLE>Catherine's Resume</TITLE>
+<meta name=viewport content="width=device-width, initial-scale=1">
 <meta name="description" content="Catherine has been in data science for just over two years. Her strongest skills include drawing insights from web engagement metrics, and visualizing data.">
+<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 <style type="text/css">
 body, html {
-  margin-top: 50; margin-left: 150px; margin-right: 150px;padding:0
+  margin-top: 35; margin-left: 150px; margin-right: 150px;padding:0
+}
+h1{
+  font-size: 36px;
+	font-family: "Inconsolata";
+	font-weight: normal;
+}
+#link{
+  padding-left: 20px;
+  padding-right: 20px;
+	font-family: "Inconsolata";
+}
+a{
+	color: blue;
+  text-decoration: underline;
+  border-bottom: none;
+}
+.nav{
+  padding-bottom: 30px;
 }
 td{
   padding-right: 20px;
   padding-bottom: 20px;
 }
-div{
+div.job{
   text-align: left;
   font-weight: bold;
 }
-h1{
+h1.section{
+  font-family: inherit;
   text-align: left;
   font-weight: bold;
   font-size: 16px;
@@ -47,11 +68,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 </HEAD>
 <BODY>
+  <center>
+	<h1>catherine smith</h1>
+	<div class="nav">
+			<a id="link" class="notes" href="http://catherine.work/notes">notes</a>
+			<a id="link" class="resume" href="http://catherine.work/resume">resume</a>
+			<a id="link" class="contact" href="http://www.google.com/recaptcha/mailhide/d?k=014VTpFHQo_w-bJjM2PEvGXQ==&amp;c=orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075014VTpFHQo_w-bJjM2PEvGXQ\75\75\46c\75orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="contact Catherine">contact</a>
+	</div>
+</center>
 
-<h1>
+<h1 class="section">
   EXPERIENCE
 </h1>
-<div>
+<div class="job">
   <span class=col1>Marketing Data Analyst, PJA Advertising + Marketing</span>
   <span class=col2>Cambridge, MA</span>
   <span class=col3>Aug 2015 - current</span>
@@ -70,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <i>Technologies used: Google Analytics / Tag Manager / Webmaster Tools, Tableau, R, Python, Git, HTML/CSS, SQL, JavaScript, jquery, Twitter Search API, Google Analytics Core Reporting API</i>
   </li>
 </ul>
-<div>
+<div class="job">
   <span class=col1>Co-founder / Consultant, DigitDragon</span>
   <span class=col2>Madison, WI</span>
   <span class=col3>Dec 2014 - Aug 2015</span>
@@ -83,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <i>Technologies used: Facebook Graph API, Twitter Search API, Excel</i>
   </li>
 </ul>
-<div>
+<div class="job">
   <span class=col1>Account Strategist, HTMLgraphic Designs</span>
   <span class=col2>Green Bay, WI</span>
   <span class=col3>Mar 2014 - Nov 2014</span>
@@ -99,7 +128,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <i>Technologies used: Google Analytics / Webmaster Tools / Adwords, WordPress, Git, HTML/CSS, Adobe Creative Suite, MailChimp</i>
   </li>
 </ul>
-<div>
+<div class="job">
   <span class=col1>Co-founder / Content Manager, FlightforSight</span>
   <span class=col2>Madison, WI</span>
   <span class=col3>Jan 2014 - June 2014</span>
@@ -112,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <i>Technologies used: WordPress, HTML/CSS</i>
   </li>
 </ul>
-<div>
+<div class="job">
   <span class=col1>Intern, The Lodge Music Production</span>
   <span class=col2>New York, NY</span>
   <span class=col3>Summer/Winter 2013</span>
@@ -123,17 +152,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </li>
 </ul>
 
-<h1>
+<h1 class="section">
   EDUCATION
 </h1>
-<div>
+<div class="job">
   <span class=col1>B.A Music, Lawrence University</span>
   <span class=col2>Appleton, WI</span>
   <span class=col3>2010-2014</span>
 </div>
 </br>
 
-<h1>
+<h1 class="section">
   ABOUT ME
 </h1>
 <ul>
