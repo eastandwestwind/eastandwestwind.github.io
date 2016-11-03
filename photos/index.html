@@ -57,7 +57,7 @@
     <script type="text/javascript">
       $(function() {
         var temp = "<div class='brick' style='width:{width}px; height: {height}px;'><img src='img/{index}.jpg' width='100%'></div>";
-        var w = 1, html = '', limitItem = 50;
+        var w = 1, html = '', limitItem = 27;
         for (var i = 0; i < limitItem; ++i) {
           w = 200 +  200 * Math.random() << 0;
           html += temp.replace(/\{height\}/g, w*1.5).replace(/\{width\}/g, w).replace("{index}", i + 1);
