@@ -7,19 +7,11 @@
 <!-- Custom CSS -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-  .cell {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    background-color: #222;
+  .flickr {
+    padding-top: 50px;
   }
-  .free-wall {
-    margin: 15px;
-  }
-  .brick img {
-    margin: 0;
-    display: block;
+  body {
+    background-color: #191919;
   }
 </style>
 </HEAD>
@@ -37,59 +29,11 @@
 <!-- jQuery Version 3.1.1 -->
 <script src="js/jquery-3.1.1.min.js"></script>
 
-<!-- Custom JavaScript -->
-<script src="js/freewall.js"></script>
-
   <CENTER>
-    <div class="face">
-      <img src="/img/face.png" height="100px">
+    <div class="flickr">
+      <a data-flickr-embed="true"  href="https://www.flickr.com/photos/47128502@N06/albums/72157675248654480" title="Ecuador 2016"><img src="https://c8.staticflickr.com/6/5821/30917243575_cd52b3617e_b.jpg" width="1024" height="768" alt="Ecuador 2016"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
     </div>
-    <h1>
-      catherine smith
-    </h1>
-    <div class="nav">
-        <a id="link" class="notes" href="http://catherine.work/notes">notes</a>
-        <a id="link" class="resume" href="http://catherine.work/resume">resume</a>
-        <a id="link" class="contact" href="http://www.google.com/recaptcha/mailhide/d?k=014VTpFHQo_w-bJjM2PEvGXQ==&amp;c=orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\075014VTpFHQo_w-bJjM2PEvGXQ\75\75\46c\75orkebmV_uIKgojNQ-aOyU1QpPEKKXiYjHikoykQFJo4\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="contact Catherine">contact</a>
-    </div>
-    <div id="freewall" class="free-wall">
-    </div>
-    <script type="text/javascript">
-      $(function() {
-        var temp = "<div class='brick' style='width:{width}px; height: {height}px;'><img src='img/{index}.jpg' width='100%'></div>";
-        var w = 1, html = '', limitItem = 27;
-        for (var i = 0; i < limitItem; ++i) {
-          w = 200 +  200 * Math.random() << 0;
-          html += temp.replace(/\{height\}/g, w*1.5).replace(/\{width\}/g, w).replace("{index}", i + 1);
-        }
-        $("#freewall").html(html);
 
-        var wall = new Freewall("#freewall");
-        wall.reset({
-          selector: '.brick',
-          animate: true,
-          cellW: 20,
-          cellH: 200,
-          onResize: function() {
-            wall.fitWidth();
-          }
-        });
-        wall.fitWidth();
-//        wall.container.find('.brick img').load(function() {
-//          wall.fitWidth();
-//        });
-        // for scroll bar appear;
-        $(window).trigger("resize");
-
-        $(".brick img").click(function() {
-          var image = new Image();
-          image.src = $(this)[0].src;
-          var w = window.open("");
-          w.document.write(image.outerHTML);
-//          $(this).attr('height', '300');
-        });
-      });
-    </script>
 
 
 </BODY>
