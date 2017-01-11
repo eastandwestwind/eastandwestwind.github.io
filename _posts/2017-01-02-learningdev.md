@@ -11,7 +11,7 @@ tags:
 - resources
 ---
 
-With a junior dev-level understanding of the basics of web development, I thought it was about time to dive in and really learn how the web works, from the bottom up. This plan is not intended to be static, rather continuously edited and updated with additional content that makes sense as I move along. 
+With an understanding of web development using very high level languages and little hardware knowledge, I thought it was about time to dive in and really learn how the web works, from the bottom up. This plan is not intended to be static, rather continuously edited and updated with additional content that makes sense as I move along. 
 
 It is also anticipated that I do my due diligence and research freely topics I don't understand, using resources I find that I may or may not document here. I plan to write blog posts along the way, to help assimilate new knowledge and note important things I want to have for reference in the future. That said, stay tuned for posts [here](http://catherine.work/notes/)!
 

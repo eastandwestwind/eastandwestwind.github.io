@@ -2,7 +2,7 @@
 name: Catherine Smith
 job_title: Data Analytics + Web Dev
 email: eastandwestwind@gmail.com
-description: My expertise is in user behavior analytics and front-end web development. I enjoy learning new things, being outdoors, and art in all its forms. Also cats.
+description: My expertise is in user behavior analytics and full-stack web development. I enjoy learning new things, being outdoors, and art in all its forms. Also cats.
 avatar: /avatar.png
 favicon: /avatar.png
 twitter_handler: your_handler
@@ -65,7 +65,7 @@ permalink: /:categories/:title.html
 category_dir: categories
 
 # Pagination
-paginate: 10
+paginate: 100
 paginate_path: "/page:num/"
 
 # Conversion
