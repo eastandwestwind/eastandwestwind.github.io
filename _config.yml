@@ -1,3 +1,6 @@
+url: https://catherine.work   # with the https protocol
+enforce_ssl: catherine.work   # without any protocol
+
 # General Settings
 name: Catherine Smith
 job_title: Data Analytics + Web Dev
