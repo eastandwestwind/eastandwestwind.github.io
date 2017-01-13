@@ -33,7 +33,11 @@ Supporting resources for how the internet works:
 
 5. [different communication techniques on the web](http://stackoverflow.com/questions/10028770/in-what-situations-would-ajax-long-short-polling-be-preferred-over-html5-websock?rq=1). 
 
-6. A more in-depth look at [Internet Sockets](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) (only through section 3), which also details data encapsulation, more detail on IP addresses, and connecting that to writing actual code in C.
+5. Intro to [Hex, Decimal, Binary, Bits, and Bytes](http://jennyshobbyfarm.com/webelfindesign/hdbbb.html)
+
+6. How [Base64](http://codesnipers.com/?q=how-i-invented-base64) came about
+
+6. Coming full circle back to [Internet Sockets](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) (only through section 3), which also details data encapsulation, more detail on IP addresses, and connecting that to writing actual code in C.
 
 Then I will begin to learn basic C, using [Introduction to C](http://www.cprogramming.com/tutorial/c/lesson1.html), aiming to write a program that opens a web socket, while of course learning the basics of the language. I'll write a program with a seg fault, and learn what a stack overflow is.
 
