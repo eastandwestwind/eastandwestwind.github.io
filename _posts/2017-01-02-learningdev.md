@@ -24,20 +24,20 @@ Overview
 
 TCP
 ----
-1. The TCP [3-way handshake](http://www.inetdaemon.com/tutorials/internet/tcp/3-way_handshake.shtml)
-2. [TCP multiplexing](http://www.inetdaemon.com/tutorials/internet/tcp/multiplexing.shtml)
-3. [TCP synchronization](http://www.omnisecu.com/tcpip/tcp-three-way-handshake.php)
+1. [Definition of Network Units](http://stackoverflow.com/questions/11636405/definition-of-network-units-fragment-segment-packet-frame-datagram)
+1. [TCP Characteristics, Operations, and Structure](http://www.inetdaemon.com/tutorials/internet/tcp/index.shtml)
+2. More on [TCP synchronization](http://www.omnisecu.com/tcpip/tcp-three-way-handshake.php)
 
 Sockets
 --------
 1. [What is the difference between a port and a socket?](http://stackoverflow.com/questions/152457/what-is-the-difference-between-a-port-and-a-socket)
 2. [Internet Sockets](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) (only through section 3), which also details data encapsulation, more detail on IP addresses, and connecting that to writing actual code in C
 
-Websockets 
+Websockets
 ----------
 1. A brief intro to [Websockets](https://www.fullstackpython.com/websockets.html), making comparisons to AJAX in web development. 
 2. The Introduction section of [The Websocket Protocol](https://tools.ietf.org/html/rfc6455)
-3. [different communication techniques on the web](http://stackoverflow.com/questions/10028770/in-what-situations-would-ajax-long-short-polling-be-preferred-over-html5-websock?rq=1)
+3. [Different communication techniques on the web](http://stackoverflow.com/questions/10028770/in-what-situations-would-ajax-long-short-polling-be-preferred-over-html5-websock?rq=1)
 4. Optional - [Intro to AJAX](https://www.udacity.com/course/intro-to-ajax--ud110), 2 weeks-long, gives a breather from networking and computer infrastructure, but would take my knowledge of javascript to the next level. In the course, I will be building a web app using Ajax best practices through various APIs.
 
 Number Systems and C
@@ -48,8 +48,9 @@ Number Systems and C
 
 Hardware and Operating Systems
 ---------------------------
-1. [Computer Science from the Bottom Up](http://feederio.com/files/book/14825303521699_27b3feca45ef47b0b77c9aa0a1565b0a.pdf), etailing the fundamentals of operating systems through to how applications are compiled and executed. I don't intend to read this front-to-back, rather gaining a thorough understanding of a couple main points: understand VM, CPU, binary, and C.
-2. Taking more of an electrical engineering approach, connecting hardware to software on a granular level, [Code: The Hidden Language of Computer Hardware and Software](https://bobcarp.files.wordpress.com/2014/07/code-charles-petzold.pdf)
+1. [Big and Little Endian](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html)
+2. [Computer Science from the Bottom Up](http://feederio.com/files/book/14825303521699_27b3feca45ef47b0b77c9aa0a1565b0a.pdf), etailing the fundamentals of operating systems through to how applications are compiled and executed. I don't intend to read this front-to-back, rather gaining a thorough understanding of a couple main points: understand VM, CPU, binary, and C.
+3. Taking more of an electrical engineering approach, connecting hardware to software on a granular level, [Code: The Hidden Language of Computer Hardware and Software](https://bobcarp.files.wordpress.com/2014/07/code-charles-petzold.pdf)
 
 Networking and Security
 -----------------------
